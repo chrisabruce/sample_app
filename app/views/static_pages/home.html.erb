@@ -1,11 +1,29 @@
+<% if signed_in? %> 
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %> 
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %> 
+      </section>
+    </aside>
+    <div class="span8">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
 <div class="center hero-unit">
-  <h1>internet of things</h1>
+    <h1>IoT Developer Community</h1>
 
-	<h2>
-    what are you connecting?  
-	</h2>
+<h2>
+      internet of things demos, platforms and Products 
+</h2>
 
-	<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %> 
+<%= link_to "Sign up now!", signup_path,
+                            class: "btn btn-large btn-primary" %>
 </div>
-	
 
+  
+<% end %>
