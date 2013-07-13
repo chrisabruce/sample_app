@@ -1,6 +1,6 @@
 @import "bootstrap";
 
-/* mixins, variables, etc. */ 
+/* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
 
@@ -8,16 +8,6 @@ $grayMediumLight: #eaeaea;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-/* miscellaneous */
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
 }
 
 /* universal */
@@ -68,9 +58,10 @@ h2 {
 }
 
 p {
-  font-size: 1.1em; 
+  font-size: 1.1em;
   line-height: 1.7em;
 }
+
 
 /* header */
 
@@ -90,6 +81,42 @@ p {
   }
 }
 
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $grayMediumLight;
+  color: $grayLight;
+  a {
+    color: $gray;
+    &:hover { 
+      color: $grayDarker;
+    }
+  }  
+  small { 
+    float: left; 
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
 /* sidebar */
 
 aside {
@@ -104,14 +131,47 @@ aside {
       display: block;
       margin-bottom: 3px;
       line-height: 1;
-}
+    }
     h1 {
-      font-size: 1.4em;
+      font-size: 1.6em;
       text-align: left;
       letter-spacing: -1px;
       margin-bottom: 3px;
-      margin-top: 0px;
-    } 
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $grayLighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
   }
 }
 
@@ -120,18 +180,9 @@ aside {
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
-  padding: 10px;
+  height: auto;
   margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: auto !important;
-}
-
-.gravatar {
-  float: left;
-  margin-right: 10px;
+  @include box_sizing;  
 }
 
 #error_explanation {
@@ -147,32 +198,6 @@ input {
   @extend .error;
 }
 
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $grayMediumLight; 
-  color: $grayLight;
-  a {
-    color: $gray;
-    &:hover {
-    color: $grayDarker;
-  }
-}
-small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 10px;
-    }
-  } 
-}
-
 /* users index */
 
 .users {
@@ -185,7 +210,7 @@ small {
     &:last-child {
       border-bottom: 1px solid $grayLighter;
     }
-  } 
+  }
 }
 
 /* microposts */
@@ -193,10 +218,12 @@ small {
 .microposts {
   list-style: none;
   margin: 10px 0 0 0;
+
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
-} }
+  }
+}
 .content {
   display: block;
 }
@@ -211,5 +238,5 @@ aside {
   textarea {
     height: 100px;
     margin-bottom: 5px;
-  } 
+  }
 }
